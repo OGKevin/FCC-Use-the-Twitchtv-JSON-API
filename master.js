@@ -3,6 +3,8 @@ $(function() {
 
     getInfo("ESL_SC2");
     getInfo("freecodecamp");
+    getInfo("ESL_LOL");
+    getInfo("ESL_CSGO");
     $("#button").click(function(event) {
       getInfo(prompt("Add a channel"));
     });
@@ -19,24 +21,21 @@ function getInfo(channelName) {
     };
 
     $.ajax(settings).done(function(response) {
-        console.log("called");
         if (response.stream === null /* ofline */ ) {
-            console.log("ofline");
             //just say offline and href no need to call apply
             $("#offline").css('visibility', 'visible');
-            $("#offline").append('<li>'+channelName+'</li>');
+            $("#offline").append('<a href="https://twitch.tv/'+channelName+'" target="_blank"> <li>'+channelName+'</li></a>');
         } else {
-            console.log("online");
-            applyInfo(response.stream.game, response.stream.channel.status, response.stream.viewers, response.stream.preview.medium, response.stream.channel.profile_banner,response.stream.channel.url);
+            applyInfo(response.stream.game, response.stream.channel.status, response.stream.viewers, response.stream.preview.medium, response.stream.channel.profile_banner,response.stream.channel.url,response.stream.channel.name);
         }
 
     });
 
 }
 
-function applyInfo(game, status, viewers, prev, banner,url) {
+function applyInfo(game, status, viewers, prev, banner,url,name) {
   if (banner === null) {
-    alert("user has no profile banner");
+    alert( name+" has no profile banner");
   }
     $("#wholeThing").append("	<a href="+url+" target='_blank'<div id='banner'><img  src=" + banner + " class='img-responsive' /></div><div class='text-center' id='status'>" + game + " -- " + status + " -- " + viewers + "</div></a>")
 
@@ -48,6 +47,5 @@ function applyInfo(game, status, viewers, prev, banner,url) {
     		$("#viewers").html(viewers)
     		// $("#bannerIMG").attr('src',banner);
     		$("#banner").html("<img id='bannerIMG' class='img-responsive' src='"+banner+"'>")
-    		console.log(banner);
     		// $("#").html()*/
 }

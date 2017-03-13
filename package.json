@@ -1,0 +1,32 @@
+{
+  "name": "twitchviewr",
+  "version": "1.0.0",
+  "description": "see twitch channels status",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OGKevin/FCC-Use-the-Twitchtv-JSON-API.git"
+  },
+  "keywords": [
+    "twitch",
+    "fcc"
+  ],
+  "author": "OGKevin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OGKevin/FCC-Use-the-Twitchtv-JSON-API/issues"
+  },
+  "homepage": "https://github.com/OGKevin/FCC-Use-the-Twitchtv-JSON-API#readme",
+  "devDependencies": {
+    "git-scripts": "^0.2.1",
+    "surge": "^0.18.0"
+  },
+"git": {
+  "scripts": {
+    "pre-push": "surge --project ./ --domain ogkevintwitchviewer.surge.sh"
+  }
+}
+}

@@ -10,3 +10,7 @@ As described on [FCC](https://www.freecodecamp.com/challenges/use-the-twitchtv-j
 ## Know bugs
 
 * The last "user story" has not been fulfilled.
+* User inputed channels are not saved.
+
+## Link
+ (http://ogkevintwitchviewer.surge.sh)

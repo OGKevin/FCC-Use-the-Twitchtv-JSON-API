@@ -16,8 +16,9 @@ function getInfo(channelName) {
 
     var settings = {
         "async": true,
-        "url": "https://wind-bow.gomix.me/twitch-api/streams/" + channelName,
+        "url": "https://cors-anywhere.herokuapp.com/wind-bow.gomix.me/twitch-api/streams/" + channelName,
         "method": "GET",
+        "headers" : {origin : "*"}
     };
 
     $.ajax(settings).done(function(response) {
@@ -38,14 +39,4 @@ function applyInfo(game, status, viewers, prev, banner,url,name) {
     alert( name+" has no profile banner");
   }
     $("#wholeThing").append("	<a href="+url+" target='_blank'<div id='banner'><img  src=" + banner + " class='img-responsive' /></div><div class='text-center' id='status'>" + game + " -- " + status + " -- " + viewers + "</div></a>")
-
-    /*
-        // jquery and add info
-        // $("#title").html(game);
-    		$("#status").html(status)
-    		// $("#preview").html("<img  class='img-responsive' src='"+prev+"'>")
-    		$("#viewers").html(viewers)
-    		// $("#bannerIMG").attr('src',banner);
-    		$("#banner").html("<img id='bannerIMG' class='img-responsive' src='"+banner+"'>")
-    		// $("#").html()*/
 }

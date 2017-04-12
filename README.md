@@ -1,5 +1,7 @@
 ## Twitchtv JSON API
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/OGKevin/FCC-Use-the-Twitchtv-JSON-API.svg)](https://greenkeeper.io/)
+
 As described on [FCC](https://www.freecodecamp.com/challenges/use-the-twitchtv-json-api) website the user should be able to:
 
 * See whether Free Code Camp is currently streaming on Twitch.tv.

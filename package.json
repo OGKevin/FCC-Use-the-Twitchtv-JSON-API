@@ -22,7 +22,7 @@
   "homepage": "https://github.com/OGKevin/FCC-Use-the-Twitchtv-JSON-API#readme",
   "devDependencies": {
     "git-scripts": "^0.2.1",
-    "surge": "^0.18.0"
+    "surge": "^0.19.0"
   },
 "git": {
   "scripts": {
